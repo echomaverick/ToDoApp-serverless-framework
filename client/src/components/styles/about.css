@@ -1,0 +1,79 @@
+/* About.css */
+
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .about h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .about h2 {
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .about ul {
+    list-style: disc;
+    margin-left: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .about li {
+    margin-bottom: 5px;
+  }
+  
+  .about p {
+    margin-bottom: 15px;
+  }
+  
+  .about .contact {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 40px;
+    /* Center the contact card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+  }
+  
+  .about .contact h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .about .contact p {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .about {
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .about h1 {
+      font-size: 28px;
+    }
+    
+    .about h2 {
+      font-size: 24px;
+    }
+    
+    .about .contact {
+      margin-top: 30px;
+    }
+  }
+  

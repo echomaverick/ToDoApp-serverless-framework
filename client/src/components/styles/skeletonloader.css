@@ -1,0 +1,44 @@
+.skeleton-card {
+  display: flex;
+  align-items: center;
+  padding: 70px;
+  border-radius: 5px;
+  background-color: #ececec;
+  margin-bottom: 20px;
+  position: relative; /* Add this line to make sure "shining-effect" children are positioned relative to this card */
+}
+
+.skeleton-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.skeleton-name,
+.skeleton-username {
+  width: 100%;
+  height: 24px;
+  background-color: #ddd;
+  margin-bottom: 8px;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.shining-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background-size: 600%;
+  animation: shine 1.5s linear infinite;
+  border-radius: 5px;
+}

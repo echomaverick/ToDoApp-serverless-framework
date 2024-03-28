@@ -1,0 +1,21 @@
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .btn-container {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .btn-container button {
+    margin-right: 10px;
+  }
+  

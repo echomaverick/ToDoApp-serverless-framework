@@ -1,0 +1,173 @@
+service: my-service
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: your-region
+
+functions:
+  getAllUsers:
+    handler: users/getAllUsers.getAllUsers
+    events:
+      - http:
+          path: /users
+          method: GET
+          cors: true
+  getUserById:
+    handler: users/getUserById.getUserById
+    events:
+      - http:
+          path: /users/{id}
+          method: GET
+          cors: true
+  createUser:
+    handler: users/createUser.createUser
+    events:
+      - http:
+          path: /users
+          method: POST
+          cors: true
+  updateUser:
+    handler: users/updateUser.updateUser
+    events:
+      - http:
+          path: /users/update-profile/{username}
+          method: PUT
+          cors: true
+  deleteUser:
+    handler: users/deleteUser.deleteUser
+    events:
+      - http:
+          path: /users/delete/{username}
+          method: DELETE
+          cors: true
+  loginUser:
+    handler: users/loginUser.loginUser
+    events:
+      - http:
+          path: /auth/login
+          method: POST
+          cors: true
+  getAllTasks:
+    handler: tasks/getAllTasks.getAllTasks
+    events:
+      - http:
+          path: /tasks
+          method: GET
+          cors: true
+  getTaskById:
+    handler: tasks/getTaskById.getTaskById
+    events:
+      - http:
+          path: /tasks/{id}
+          method: GET
+          cors: true
+  createTask:
+    handler: tasks/createTask.createTask
+    events:
+      - http:
+          path: /tasks
+          method: POST
+          cors: true
+  updateTask:
+    handler: tasks/updateTask.updateTask
+    events:
+      - http:
+          path: /tasks/update/{id}
+          method: PUT
+          cors: true
+  deleteTask:
+    handler: tasks/deleteTask.deleteTask
+    events:
+      - http:
+          path: /tasks/delete/{id}
+          method: DELETE
+          cors: true
+  getTasksForUserByUsername:
+    handler: tasks/getTasksForUserByUsername.getTasksForUserByUsername
+    events:
+      - http:
+          path: /user/{username}/tasks
+          method: GET
+          cors: true
+  taskCompleted:
+    handler: tasks/taskCompleted.taskCompleted
+    events:
+      - http:
+          path: /tasks/{id}/completed
+          method: PUT
+          cors: true
+  getAllProjects:
+    handler: projects/getAllProjects.getAllProjects
+    events:
+      - http:
+          path: /projects
+          method: GET
+          cors: true
+  getProjectById:
+    handler: projects/getProjectById.getProjectById
+    events:
+      - http:
+          path: /projects/{id}
+          method: GET
+          cors: true
+  updateProject:
+    handler: projects/updateProject.updateProject
+    events:
+      - http:
+          path: /projects/update/{id}
+          method: PUT
+          cors: true
+  createProject:
+    handler: projects/createProject.createProject
+    events:
+      - http:
+          path: /projects
+          method: POST
+          cors: true
+  deleteProject:
+    handler: projects/deleteProject.deleteProject
+    events:
+      - http:
+          path: /projects/delete/{id}
+          method: DELETE
+          cors: true
+  getProjectsForUserByUsername:
+    handler: projects/getProjectsForUserByUsername.getProjectsForUserByUsername
+    events:
+      - http:
+          path: /user/{username}/projects
+          method: GET
+          cors: true
+  projectCompleted:
+    handler: projects/projectCompleted.projectCompleted
+    events:
+      - http:
+          path: /projects/{id}/completed
+          method: PUT
+          cors: true
+  getAllRoles:
+    handler: roles/getAllRoles.getAllRoles
+    events:
+      - http:
+          path: /roles
+          method: GET
+          cors: true
+  getProjectsForTasks:
+    handler: tasks/getProjectsForTasks.getProjectsForTasks
+    events:
+      - http:
+          path: /task/{id}/projects
+          method: GET
+          cors: true
+plugins: 
+  - serverless-webpack
+  - serverless-plugin-optimize
+
+custom:
+  optimizer: 
+    memorySize: 500
+
+package:
+  individually: true
+  excludeDevDependencies: false
